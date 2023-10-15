@@ -1,6 +1,6 @@
 # MetaTrader5 Docker Image
 
-This project provides a Docker image for running MetaTrader5 with remote access via VNC, based on the [KasmVNC](https://github.com/kasmtech/KasmVNC) project.
+This project provides a Docker image for running MetaTrader5 with remote access via VNC, based on the [KasmVNC](https://github.com/kasmtech/KasmVNC) project and [KasmVNC Base Images from LinuxServer](https://github.com/linuxserver/docker-baseimage-kasmvnc).
 
 ## Features
 
@@ -42,9 +42,11 @@ Feel free to contribute to this project. All contributions are welcome. Open an 
 
 This project is licensed under the terms of the [MIT license](https://opensource.org/license/mit/). 
 
-The KasmVNC project, which this project is based on, is licensed under the [GNU General Public License v2.0 (GPLv2)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html). You can check the license details of KasmVNC [here](https://github.com/kasmtech/KasmVNC/blob/master/LICENSE.TXT).
+The **KasmVNC** project is licensed under the [GNU General Public License v2.0 (GPLv2)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html). You can check the license details of KasmVNC [here](https://github.com/kasmtech/KasmVNC/blob/master/LICENSE.TXT).
+
+**KasmVNC Base Images from LinuxServer** is licensed unther the GNU General Public License v3.0 (GPLv3). License is available [here](https://github.com/linuxserver/docker-baseimage-kasmvnc/blob/master/LICENSE)
 
 Please ensure to comply with the terms and conditions of the licenses while using or modifying this project.
 
 # Acknowledgments
-Acknowledgments to the [KasmVNC](https://github.com/kasmtech/KasmVNC) project and any other project or individual that contributed to the realization of this project.
+Acknowledgments to the [KasmVNC](https://github.com/kasmtech/KasmVNC) project, [KasmVNC Base Images from LinuxServer](https://github.com/linuxserver/docker-baseimage-kasmvnc/tree/master) and any other project or individual that contributed to the realization of this project.
