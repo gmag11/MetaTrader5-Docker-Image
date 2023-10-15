@@ -6,3 +6,4 @@ LICENSE.md
 .gitignore
 .env.example
 .env
+config
