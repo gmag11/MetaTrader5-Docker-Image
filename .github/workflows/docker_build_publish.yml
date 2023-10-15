@@ -36,8 +36,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          # context: .
+          # file: ./Dockerfile
           platforms: linux/amd64
           push: true
           tags:  gmag11/metatrader5_vnc:${{ env.VERSION }},gmag11/metatrader5_vnc:latest
