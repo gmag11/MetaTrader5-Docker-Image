@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mt5:
+    build: .
+    image: gmag11/mt5
+    container_name: mt5
+    volumes:
+      - ./config:/config
+    ports:
+      - 3002:3000
+    env_file:
+      - .env
+  
