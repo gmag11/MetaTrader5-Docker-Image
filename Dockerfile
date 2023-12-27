@@ -1,30 +1,26 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine318
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbullseye
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-LABEL build_version="Metatrader5 Docker:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="github@gmartin.net"
+LABEL build_version="Metatrader Docker:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="gmartin"
 
-# title
 ENV TITLE=Metatrader5
-
 ENV WINEPREFIX="/config/.wine"
 
-#install wine and dependencies
-RUN apk update && apk add wine \
-    && rm -rf /apk /tmp/* /var/cache/apk/*
+# Install wine and dependencies
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y python3-pip wget && \
+    wget -O- -q https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11/Release.key | apt-key add - && \
+    echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11 ./" | tee /etc/apt/sources.list.d/>
+    dpkg --add-architecture i386 && apt-get update && \
+    apt-get install --install-recommends winehq-stable -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# add local files
 COPY /Metatrader /Metatrader
 RUN chmod +x /Metatrader/start.sh
 COPY /root /
 
-# remove sudo
-RUN apk del sudo
-
-# ports and volumes
-EXPOSE 3000
-
+EXPOSE 3000 8001
 VOLUME /config
-    
