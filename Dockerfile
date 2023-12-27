@@ -13,7 +13,7 @@ ENV WINEPREFIX="/config/.wine"
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y python3-pip wget && \
     wget -O- -q https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11/Release.key | apt-key add - && \
-    echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11 ./" | tee /etc/apt/sources.list.d/>
+    echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_11 ./" | tee /etc/apt/sources.list.d/wine-obs.list && \
     dpkg --add-architecture i386 && apt-get update && \
     apt-get install --install-recommends winehq-stable -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
