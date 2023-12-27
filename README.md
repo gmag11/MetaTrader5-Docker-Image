@@ -33,6 +33,8 @@ docker run -d -p 3000:3000 -p 8001:8001 -v config:/config mt5
 
 Now you can access MetaTrader5 via a web browser at localhost:3000.
 
+On first run it may take some minutes to get everything installed and running.
+
 ## Python programming
 
 You need to install [mt5linux library](https://github.com/lucas-campagna/mt5linux) in your Python host. It may be in any OS, not only Linux.
