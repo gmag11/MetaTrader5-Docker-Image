@@ -9,6 +9,7 @@ services:
       - ./config:/config
     ports:
       - 3000:3000
+      - 8001:8001
     env_file:
       - .env
   
