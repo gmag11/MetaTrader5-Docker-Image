@@ -48,7 +48,7 @@ mt5.initialize()
 print(mt5.version())
 ```
 
-Output should be sobething like this:
+Output should be something like this:
 
 ```
 (mt5linux) linux:~/$ python3
