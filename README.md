@@ -12,6 +12,7 @@ This project provides a Docker image for running MetaTrader5 with remote access 
 ## Requirements
 
 - Docker installed on your machine.
+- Only amd64 host is supported
 
 ## Usage
 
