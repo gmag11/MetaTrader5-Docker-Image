@@ -47,7 +47,7 @@ On first run it may take a few minutes to get everything installed and running. 
 
 ## Usage with docker compose with image form Docker Registry (preferred way)
 
-1. Create a folder
+1. Create a folder in a path where you have permission. For instance in your home.
 ```bash
 mkdir MT5
 cd MT5
