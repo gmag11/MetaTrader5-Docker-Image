@@ -115,7 +115,7 @@ All files that you place there can be accessed from your MetaTrader container wi
 
 You can access MetaEditor program clicking in `IDE` button in MetaTrader5 interface.
 
-**Notice**: If you will run MQL5 only bots (without Python) you can run perfectly with gmag11/metatrader5_vnc:1.0 image as pointed before. Remember that **image version is not stuck to a specific MetaTrader 5**.
+**Notice**: If you will run MQL5 only bots (without Python) you can run perfectly with gmag11/metatrader5_vnc:1.0 image as pointed before. Remember that **image version is not stuck to a specific MetaTrader 5 version**.
 
 **Metatrader will always be updated automatically to latest version as it does when it is nativelly installed in Windows.**
 
