@@ -9,6 +9,8 @@ This project provides a Docker image for running MetaTrader5 with remote access 
 - Built on the reliable and secure KasmVNC project.
 - RPyC server for remote access to Python MetaTrader Library from Windows or Linux using https://github.com/lucas-campagna/mt5linux
 
+![MetaTrader5 running inside container and controlled through web browser](https://imgur.com/v6Hm9pa.png)
+
 ----------
 
 **NOTICE:**
