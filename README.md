@@ -23,7 +23,7 @@ If you just need to run Metatrader for running your MQL5 programs without any Py
 - Docker installed on your machine.
 - Only amd64 host is supported
 
-## Usage
+## Usage from repository
 
 1. Clone this repository:
 ```bash
@@ -43,7 +43,79 @@ docker run -d -p 3000:3000 -p 8001:8001 -v config:/config mt5
 
 Now you can access MetaTrader5 via a web browser at localhost:3000.
 
-On first run it may take some minutes to get everything installed and running.
+On first run it may take a few minutes to get everything installed and running. Normally it takes less than 5 minutes. You don't need to do anything. All installation process is automatic and you should end up with MetaTrader5 running in your web session.
+
+## Usage with docker compose with image form Docker Registry (preferred way)
+
+1. Create a folder
+```bash
+mkdir MT5
+cd MT5
+```
+
+2. Create `docker-compose.yaml` file.
+```bash
+nano docker-compose.yaml
+```
+
+Use this content filling user and password with your own data.
+
+```yaml
+version: '3'
+
+services:
+  mt5:
+    image: gmag11/metatrader5_vnc
+    container_name: mt5
+    volumes:
+      - ./config:/config
+    ports:
+      - 3000:3000
+      - 8001:8001
+    environment:
+      - CUSTOM_USER=<Choose a user>
+      - PASSWORD=<Choose a secure password>
+```
+
+**Notice**: If you do not need to do remote python programming you can get a much smaller installation changing this line:
+
+```yaml
+image: gmag11/metatrader5_vnc
+```
+
+by this one
+
+
+```yaml
+image: gmag11/metatrader5_vnc:1.0
+```
+
+3. Start the container
+```bash
+docker compose up -d
+```
+
+In some systems `docker compose` command does not exists. Try to use `docker-compose up -d` instead.
+
+4. Connect to web interface
+   Start your browser pointing http://<your ip address>:3000
+
+On first run it may take a few minutes to get everything installed and running. Normally it takes less than 5 minutes. You don't need to do anything. All installation process is automatic and you should end up with MetaTrader5 running in your web session.
+
+## Where to place MQ5 and EX5 files
+In the case you want to run your own MQL5 bots inside the container you can find MQL5 folder structure in 
+
+```
+~/config/.wine/drive_c/Program Files/MetaTrader 5/MQL5
+```
+
+All files that you place there can be accessed from your MetaTrader container without the need to restart anything.
+
+You can access MetaEditor program clicking in `IDE` button in MetaTrader5 interface.
+
+**Notice**: If you will run MQL5 only bots (without Python) you can run perfectly with gmag11/metatrader5_vnc:1.0 image as pointed before. Remember that **image version is not stuck to a specific MetaTrader 5**.
+
+**Metatrader will always be updated automatically to latest version as it does when it is nativelly installed in Windows.**
 
 ## Python programming
 
