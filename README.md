@@ -23,7 +23,7 @@ If you just need to run Metatrader for running your MQL5 programs without any Py
 ## Requirements
 
 - Docker installed on your machine.
-- Only amd64 host is supported
+- Only intelx86/amd64 host is supported
 
 ## Usage from repository
 
