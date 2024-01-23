@@ -14,7 +14,7 @@ This project provides a Docker image for running MetaTrader5 with remote access 
 ----------
 
 **NOTICE:**
-Due to some compatibility issued, version 2 has switched its base from Alpine to Debian Linux. This and adding Python environment makes that image size is considerably bigger from about 600 MB to 4 GB.
+Due to some compatibility issued, version 2 has switched its base from Alpine to Debian Linux. This and adding Python environment makes that container size is considerably bigger from about 600 MB to 4 GB.
 
 If you just need to run Metatrader for running your MQL5 programs without any Python programming I recommend to go on using version 1.0. MetaTrader program is updated independently from image so you will always have latest MT5 version.
 
