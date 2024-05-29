@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   mt5:
     build: .
@@ -12,4 +10,4 @@ services:
       - 8001:8001
     env_file:
       - .env
-  
+
